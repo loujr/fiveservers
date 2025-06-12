@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.glass-card, .feature-card, .service-card, .value-card, .team-card').forEach(el => {
+    document.querySelectorAll('.glass-card, .feature-card, .service-card, .value-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.feature-card, .service-card, .value-card, .team-card').forEach(el => {
+    document.querySelectorAll('.feature-card, .service-card, .value-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
