@@ -2,14 +2,40 @@
 
 {% block content %}
 <!-- Page Header -->
-<section class="page-header bg-gradient text-white py-5">
+<section class="page-header text-white py-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-5 fw-bold mb-3">
-                    <i class="fas fa-blog me-3"></i>Digital Insights Blog
+                <h1 class="display-5 fw-bold mb-3 text-primary-glow">
+                    <i class="fas fa-blog me-3"></i>fiveservers Insights
                 </h1>
-                <p class="lead">Stay updated with the latest trends in digital transformation, technology, and business strategy.</p>
+                <p class="lead text-secondary">Expert insights on digital transformation, emerging technologies, and strategic business innovation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Stats -->
+<section class="blog-stats py-3">
+    <div class="container">
+        <div class="glass-card p-3">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <h4 class="text-primary mb-0">{{ posts|length }}</h4>
+                    <small class="text-secondary">Articles</small>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="text-primary mb-0">10</h4>
+                    <small class="text-secondary">Categories</small>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="text-primary mb-0">15k+</h4>
+                    <small class="text-secondary">Readers</small>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="text-primary mb-0">8</h4>
+                    <small class="text-secondary">Min Avg Read</small>
+                </div>
             </div>
         </div>
     </div>
@@ -22,27 +48,30 @@
             <!-- Main Content -->
             <div class="col-lg-8">
                 {% for post in posts %}
-                <article class="blog-post card mb-4">
+                <article class="blog-post glass-card mb-4">
                     <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <span class="badge bg-primary">{{ post.date }}</span>
-                            <span class="text-muted small">by {{ post.author }}</span>
+                            <div class="post-meta">
+                                <span class="badge bg-primary me-2">{{ post.category }}</span>
+                                <span class="text-secondary small">{{ post.date }}</span>
+                            </div>
+                            <span class="text-secondary small">{{ post.read_time }}</span>
                         </div>
                         
-                        <h2 class="card-title h4 mb-3">
-                            <a href="#" class="text-decoration-none text-dark">{{ post.title }}</a>
+                        <h2 class="card-title h4 mb-3 text-primary-glow">
+                            <a href="{{ url_for('blog_post', post_id=loop.index) }}" class="text-decoration-none text-primary">{{ post.title }}</a>
                         </h2>
                         
-                        <p class="card-text text-muted">{{ post.excerpt }}</p>
+                        <p class="card-text text-secondary mb-3">{{ post.excerpt }}</p>
                         
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a href="#" class="btn btn-outline-primary">
-                                <i class="fas fa-arrow-right me-2"></i>Read More
-                            </a>
-                            <div class="social-share">
-                                <a href="#" class="text-muted me-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="text-muted me-2"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="text-muted"><i class="fas fa-share-alt"></i></a>
+                        <div class="post-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="author-info">
+                                    <small class="text-secondary">by <span class="text-primary">{{ post.author }}</span></small>
+                                </div>
+                                <a href="{{ url_for('blog_post', post_id=loop.index) }}" class="btn btn-outline-primary">
+                                    <i class="fas fa-arrow-right me-2"></i>Read More
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -50,16 +79,22 @@
                 {% endfor %}
 
                 <!-- Pagination -->
-                <nav aria-label="Blog pagination">
+                <nav aria-label="Blog pagination" class="mt-5">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            <a class="page-link bg-dark-glass border-primary text-secondary" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                         </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item active">
+                            <a class="page-link bg-primary border-primary" href="#">1</a>
+                        </li>
                         <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
+                            <a class="page-link bg-dark-glass border-primary text-primary" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link bg-dark-glass border-primary text-primary" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link bg-dark-glass border-primary text-primary" href="#">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -69,12 +104,12 @@
             <div class="col-lg-4">
                 <div class="sidebar">
                     <!-- Search -->
-                    <div class="card mb-4">
+                    <div class="glass-card mb-4">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-search me-2"></i>Search</h5>
+                            <h5 class="card-title text-primary-glow"><i class="fas fa-search me-2"></i>Search Insights</h5>
                             <div class="input-group">
-                                <input type="search" class="form-control" placeholder="Search articles...">
-                                <button class="btn btn-outline-primary" type="button">
+                                <input type="search" class="form-control bg-dark-glass border-primary text-light" placeholder="Search articles..." id="blog-search">
+                                <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
@@ -82,23 +117,119 @@
                     </div>
 
                     <!-- Categories -->
-                    <div class="card mb-4">
+                    <div class="glass-card mb-4">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-tags me-2"></i>Categories</h5>
+                            <h5 class="card-title text-primary-glow"><i class="fas fa-tags me-2"></i>Categories</h5>
                             <div class="list-group list-group-flush">
-                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                    Digital Strategy
-                                    <span class="badge bg-primary rounded-pill">5</span>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    AI & Machine Learning
+                                    <span class="badge bg-primary rounded-pill">2</span>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                    Technology
-                                    <span class="badge bg-primary rounded-pill">8</span>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                    Data Analytics
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Software Development
                                     <span class="badge bg-primary rounded-pill">3</span>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Cloud & DevOps
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Cybersecurity
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Tech Careers
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Blockchain & Web3
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Mobile Development
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Consumer Tech
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Tech for Good
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center bg-transparent border-primary text-secondary">
+                                    Productivity
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="glass-card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary-glow"><i class="fas fa-fire me-2"></i>Popular Posts</h5>
+                            <div class="popular-posts">
+                                <div class="popular-post mb-3 pb-3 border-bottom border-primary">
+                                    <h6 class="mb-1"><a href="#" class="text-primary text-decoration-none">AI Revolution: Latest Breakthroughs</a></h6>
+                                    <small class="text-secondary">2.5k views • 8 min read</small>
+                                </div>
+                                <div class="popular-post mb-3 pb-3 border-bottom border-primary">
+                                    <h6 class="mb-1"><a href="#" class="text-primary text-decoration-none">Multi-Cloud Strategy Guide</a></h6>
+                                    <small class="text-secondary">1.8k views • 12 min read</small>
+                                </div>
+                                <div class="popular-post mb-3 pb-3 border-bottom border-primary">
+                                    <h6 class="mb-1"><a href="#" class="text-primary text-decoration-none">Breaking into Tech: Career Guide</a></h6>
+                                    <small class="text-secondary">3.1k views • 14 min read</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reading Progress -->
+                    <div class="glass-card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary-glow"><i class="fas fa-chart-line me-2"></i>Your Progress</h5>
+                            <div class="reading-stats">
+                                <div class="mb-3">
+                                    <small class="text-secondary">Articles Read This Month</small>
+                                    <div class="progress mt-1" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" style="width: 65%"></div>
+                                    </div>
+                                    <small class="text-primary">13 / 20 Goal</small>
+                                </div>
+                                <div class="mb-3">
+                                    <small class="text-secondary">Reading Time This Week</small>
+                                    <div class="progress mt-1" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" style="width: 45%"></div>
+                                    </div>
+                                    <small class="text-primary">2.5 / 5.5 hours</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="glass-card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary-glow"><i class="fas fa-envelope me-2"></i>Stay Updated</h5>
+                            <p class="text-secondary small">Get the latest insights delivered to your inbox weekly.</p>
+                            <form class="newsletter-form">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control bg-dark-glass border-primary text-light" placeholder="Your email address">
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Subscribe
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
                                     Business Insights
                                     <span class="badge bg-primary rounded-pill">6</span>
                                 </a>
