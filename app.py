@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     """Home page route"""
     return render_template('index.html', 
-                         page_title='Digital Advisor | Home',
+                         page_title='fiveservers | Home',
                          page_type='home')
 
 @app.route('/blog')
@@ -34,7 +34,7 @@ def blog():
         }
     ]
     return render_template('blog.html', 
-                         page_title='Digital Advisor | Blog',
+                         page_title='fiveservers | Blog',
                          page_type='blog',
                          posts=posts)
 
@@ -42,7 +42,7 @@ def blog():
 def about():
     """About/Info page route"""
     return render_template('about.html', 
-                         page_title='Digital Advisor | About',
+                         page_title='fiveservers | About',
                          page_type='about')
 
 @app.route('/services')
@@ -71,7 +71,7 @@ def services():
         }
     ]
     return render_template('services.html', 
-                         page_title='Digital Advisor | Services',
+                         page_title='fiveservers | Services',
                          page_type='services',
                          services=services_list)
 
