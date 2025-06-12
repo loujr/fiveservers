@@ -126,40 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeWriter, 1000);
     }
 
-    // Newsletter subscription with feedback
-    const newsletterForms = document.querySelectorAll('.newsletter-form');
-    newsletterForms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            const button = this.querySelector('button');
-            
-            // Simulate subscription process
-            button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Subscribing...';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                button.innerHTML = '<i class="fas fa-check me-2"></i>Subscribed!';
-                button.classList.remove('btn-primary');
-                button.classList.add('btn-success');
-                
-                // Show success message
-                const successMsg = document.createElement('div');
-                successMsg.className = 'alert alert-success mt-3';
-                successMsg.innerHTML = 'Thank you for subscribing! Check your email for confirmation.';
-                this.appendChild(successMsg);
-                
-                setTimeout(() => {
-                    successMsg.remove();
-                    button.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Subscribe';
-                    button.disabled = false;
-                    button.classList.remove('btn-success');
-                    button.classList.add('btn-primary');
-                    this.reset();
-                }, 3000);
-            }, 2000);
-        });
-    });
+
 
     // Copy to clipboard functionality
     function copyToClipboard(text) {
