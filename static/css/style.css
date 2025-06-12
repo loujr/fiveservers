@@ -249,7 +249,7 @@ body {
     color: var(--text-primary);
 }
 
-.value-card, .team-card {
+.value-card {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
@@ -260,7 +260,7 @@ body {
     color: var(--text-primary);
 }
 
-.value-card:hover, .team-card:hover {
+.value-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--glass-shadow-hover);
     border-color: var(--primary-color);
