@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Post Header -->
+<section class="page-header text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="post-category mb-3">
+                    <span class="badge bg-primary fs-6">{{ post.category }}</span>
+                </div>
+                <h1 class="display-6 fw-bold mb-3 text-primary-glow">{{ post.title }}</h1>
+                <div class="post-meta d-flex justify-content-center align-items-center gap-4 text-secondary">
+                    <span><i class="fas fa-user me-2"></i>{{ post.author }}</span>
+                    <span><i class="fas fa-calendar me-2"></i>{{ post.date }}</span>
+                    <span><i class="fas fa-clock me-2"></i>{{ post.read_time }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Post Content -->
+<section class="post-content py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="glass-card p-5">
+                    <!-- Post Body -->
+                    <div class="post-body text-secondary" style="font-size: 1.1rem; line-height: 1.8;">
+                        <p class="lead text-primary-glow">{{ post.excerpt }}</p>
+                        
+                        <p>{{ post.content }}</p>
+                        
+                        <!-- Additional content for engagement -->
+                        <h3 class="text-primary-glow mt-5 mb-3">Key Takeaways</h3>
+                        <ul class="text-secondary">
+                            <li class="mb-2">Understanding the strategic implications of emerging technologies</li>
+                            <li class="mb-2">Practical implementation approaches for business transformation</li>
+                            <li class="mb-2">Risk mitigation strategies and best practices</li>
+                            <li class="mb-2">Future trends and their potential impact on your industry</li>
+                        </ul>
+                        
+                        <div class="callout glass-card p-4 mt-4 mb-4">
+                            <h4 class="text-primary-glow mb-3">
+                                <i class="fas fa-lightbulb me-2"></i>Expert Insight
+                            </h4>
+                            <p class="text-secondary mb-0">
+                                "The key to successful digital transformation isn't just adopting new technologies—it's about 
+                                fundamentally rethinking how your business creates and delivers value in the digital age."
+                            </p>
+                            <cite class="text-primary">— fiveservers Strategy Team</cite>
+                        </div>
+                        
+                        <h3 class="text-primary-glow mt-5 mb-3">Next Steps</h3>
+                        <p>Ready to implement these insights in your organization? Our team at fiveservers specializes in 
+                        translating strategic vision into practical, measurable outcomes.</p>
+                        
+                        <div class="cta-section glass-card p-4 mt-4 text-center">
+                            <h4 class="text-primary-glow mb-3">Need Strategic Guidance?</h4>
+                            <p class="text-secondary mb-3">
+                                Let's discuss how these insights can be applied to your specific business challenges.
+                            </p>
+                            <a href="{{ url_for('about') }}" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
+                            </a>
+                            <a href="{{ url_for('services') }}" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-rocket me-2"></i>View Services
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Post Navigation -->
+                    <div class="post-navigation mt-5 pt-4 border-top border-primary">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="{{ url_for('blog') }}" class="btn btn-outline-primary">
+                                    <i class="fas fa-arrow-left me-2"></i>Previous Post
+                                </a>
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <a href="{{ url_for('blog') }}" class="btn btn-outline-primary">
+                                    Next Post<i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Share Section -->
+                    <div class="share-section mt-4 pt-4 border-top border-primary text-center">
+                        <h5 class="text-primary-glow mb-3">Share This Article</h5>
+                        <div class="share-buttons">
+                            <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                                <i class="fab fa-twitter me-2"></i>Twitter
+                            </a>
+                            <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                                <i class="fab fa-linkedin me-2"></i>LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                                <i class="fas fa-link me-2"></i>Copy Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Posts -->
+<section class="related-posts py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="fw-bold text-primary-glow">Related Articles</h2>
+                <p class="lead text-secondary">Continue exploring our insights</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="glass-card p-4 h-100">
+                    <span class="badge bg-primary mb-2">{{ post.category }}</span>
+                    <h5 class="text-primary-glow mb-3">
+                        <a href="{{ url_for('blog') }}" class="text-decoration-none text-primary">
+                            Understanding Digital Transformation ROI
+                        </a>
+                    </h5>
+                    <p class="text-secondary small mb-3">
+                        Measuring the success of your digital initiatives with proven metrics and KPIs.
+                    </p>
+                    <small class="text-secondary">5 min read</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 h-100">
+                    <span class="badge bg-primary mb-2">Software Development</span>
+                    <h5 class="text-primary-glow mb-3">
+                        <a href="{{ url_for('blog') }}" class="text-decoration-none text-primary">
+                            API-First Development Strategy
+                        </a>
+                    </h5>
+                    <p class="text-secondary small mb-3">
+                        Building scalable systems with API-first architecture principles and best practices.
+                    </p>
+                    <small class="text-secondary">7 min read</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 h-100">
+                    <span class="badge bg-primary mb-2">Cloud & DevOps</span>
+                    <h5 class="text-primary-glow mb-3">
+                        <a href="{{ url_for('blog') }}" class="text-decoration-none text-primary">
+                            Kubernetes Security Best Practices
+                        </a>
+                    </h5>
+                    <p class="text-secondary small mb-3">
+                        Comprehensive security strategies for containerized applications and orchestration.
+                    </p>
+                    <small class="text-secondary">9 min read</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
