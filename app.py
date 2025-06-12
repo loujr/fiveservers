@@ -50,24 +50,48 @@ def services():
     """Services/Tech page route"""
     services_list = [
         {
-            'name': 'Digital Strategy Consulting',
-            'description': 'Comprehensive digital transformation guidance',
-            'icon': 'strategy'
+            'name': 'Strategic Digital Advising',
+            'description': 'Executive-level guidance for digital transformation initiatives with proven methodologies',
+            'icon': 'brain',
+            'features': [
+                'Digital transformation roadmap development',
+                'Technology stack assessment and optimization',
+                'Change management and adoption strategies',
+                'ROI analysis and success metrics planning'
+            ]
         },
         {
-            'name': 'Technology Implementation',
-            'description': 'End-to-end tech solution deployment',
-            'icon': 'tech'
+            'name': 'Precision Software Contracting',
+            'description': 'Custom software development and system integration delivered with excellence',
+            'icon': 'code',
+            'features': [
+                'Full-stack web and mobile applications',
+                'API development and microservices architecture',
+                'Legacy system modernization',
+                'Quality assurance and testing automation'
+            ]
         },
         {
-            'name': 'Data Analytics & AI',
-            'description': 'Advanced analytics and machine learning solutions',
-            'icon': 'analytics'
+            'name': 'Cloud Infrastructure Contracting',
+            'description': 'Scalable cloud architecture design, deployment, and optimization',
+            'icon': 'cloud',
+            'features': [
+                'Multi-cloud strategy and implementation',
+                'DevOps pipeline automation',
+                'Infrastructure as Code (IaC)',
+                'Security and compliance frameworks'
+            ]
         },
         {
-            'name': 'Cloud Infrastructure',
-            'description': 'Scalable cloud architecture and migration',
-            'icon': 'cloud'
+            'name': 'Data & AI Solutions',
+            'description': 'Advanced analytics, machine learning, and artificial intelligence implementations',
+            'icon': 'chart-line',
+            'features': [
+                'Predictive analytics and business intelligence',
+                'Machine learning model development',
+                'Data pipeline architecture',
+                'AI strategy and ethical implementation'
+            ]
         }
     ]
     return render_template('services.html', 

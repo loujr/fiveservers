@@ -2,29 +2,30 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-section bg-gradient text-white py-5">
+<section class="hero-section text-white py-5">
     <div class="container">
         <div class="row align-items-center min-vh-50">
             <div class="col-lg-6">
-                <h1 class="display-4 fw-bold mb-4">
-                    Your Digital <span class="text-primary">Advisor</span>
+                <h1 class="display-4 fw-bold mb-4 text-primary-glow">
+                    Your Digital <span class="text-primary">Transformation</span> Partner
                 </h1>
-                <p class="lead mb-4">
-                    Empowering businesses with intelligent digital solutions, strategic insights, 
-                    and cutting-edge technology implementations.
+                <p class="lead mb-4 text-secondary">
+                    Transforming businesses through intelligent digital solutions. 
+                    We deliver strategic digital advising and precision contracting services 
+                    that drive measurable results.
                 </p>
                 <div class="d-flex gap-3">
                     <a href="{{ url_for('services') }}" class="btn btn-primary btn-lg">
                         <i class="fas fa-rocket me-2"></i>Explore Services
                     </a>
-                    <a href="{{ url_for('about') }}" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-info-circle me-2"></i>Learn More
+                    <a href="{{ url_for('about') }}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>Our Story
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 text-center">
                 <div class="hero-graphic">
-                    <i class="fas fa-brain fa-10x text-primary opacity-75"></i>
+                    <i class="fas fa-server fa-10x text-primary opacity-75"></i>
                 </div>
             </div>
         </div>
@@ -36,39 +37,39 @@
     <div class="container">
         <div class="row text-center mb-5">
             <div class="col-lg-8 mx-auto">
-                <h2 class="display-6 fw-bold">Why Choose Digital Advisor?</h2>
-                <p class="lead text-muted">We combine expertise, innovation, and personalized service to deliver exceptional results.</p>
+                <h2 class="display-6 fw-bold text-primary-glow">Why Choose fiveservers?</h2>
+                <p class="lead text-secondary">We combine deep expertise, cutting-edge innovation, and personalized service to deliver transformative results.</p>
             </div>
         </div>
         
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="feature-card text-center p-4">
+                <div class="glass-card text-center p-4">
                     <div class="feature-icon mb-3">
-                        <i class="fas fa-lightbulb fa-3x text-primary"></i>
+                        <i class="fas fa-brain fa-3x text-primary"></i>
                     </div>
-                    <h4>Strategic Innovation</h4>
-                    <p class="text-muted">Cutting-edge strategies tailored to your business needs and market position.</p>
+                    <h4 class="text-primary-glow">Strategic Digital Advising</h4>
+                    <p class="text-secondary">Expert guidance through complex digital transformations with proven methodologies and industry insights.</p>
                 </div>
             </div>
             
             <div class="col-md-4">
-                <div class="feature-card text-center p-4">
+                <div class="glass-card text-center p-4">
                     <div class="feature-icon mb-3">
-                        <i class="fas fa-chart-line fa-3x text-success"></i>
+                        <i class="fas fa-code fa-3x text-primary"></i>
                     </div>
-                    <h4>Data-Driven Results</h4>
-                    <p class="text-muted">Leverage analytics and AI to make informed decisions and measure success.</p>
+                    <h4 class="text-primary-glow">Precision Contracting</h4>
+                    <p class="text-secondary">Custom software solutions, infrastructure deployment, and technical implementations delivered with excellence.</p>
                 </div>
             </div>
             
             <div class="col-md-4">
-                <div class="feature-card text-center p-4">
+                <div class="glass-card text-center p-4">
                     <div class="feature-icon mb-3">
-                        <i class="fas fa-users fa-3x text-info"></i>
+                        <i class="fas fa-chart-line fa-3x text-primary"></i>
                     </div>
-                    <h4>Expert Support</h4>
-                    <p class="text-muted">Dedicated team of professionals committed to your success every step of the way.</p>
+                    <h4 class="text-primary-glow">Data-Driven Success</h4>
+                    <p class="text-secondary">Leverage advanced analytics, AI, and machine learning to drive measurable business outcomes.</p>
                 </div>
             </div>
         </div>
@@ -76,17 +77,19 @@
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section bg-light py-5">
+<section class="cta-section py-5">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <h3 class="fw-bold mb-2">Ready to Transform Your Business?</h3>
-                <p class="text-muted mb-0">Get started with a free consultation and discover how we can help you achieve your goals.</p>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-                <a href="{{ url_for('about') }}" class="btn btn-primary btn-lg">
-                    <i class="fas fa-calendar-alt me-2"></i>Get Started
-                </a>
+        <div class="glass-card p-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-2 text-primary-glow">Ready to Transform Your Business?</h3>
+                    <p class="text-secondary mb-0">Connect with our team for a strategic consultation and discover how we can accelerate your digital transformation journey.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="{{ url_for('about') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-alt me-2"></i>Get Started
+                    </a>
+                </div>
             </div>
         </div>
     </div>
