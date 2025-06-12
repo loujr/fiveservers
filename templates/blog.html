@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-gradient text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-5 fw-bold mb-3">
+                    <i class="fas fa-blog me-3"></i>Digital Insights Blog
+                </h1>
+                <p class="lead">Stay updated with the latest trends in digital transformation, technology, and business strategy.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts -->
+<section class="blog-section py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                {% for post in posts %}
+                <article class="blog-post card mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary">{{ post.date }}</span>
+                            <span class="text-muted small">by {{ post.author }}</span>
+                        </div>
+                        
+                        <h2 class="card-title h4 mb-3">
+                            <a href="#" class="text-decoration-none text-dark">{{ post.title }}</a>
+                        </h2>
+                        
+                        <p class="card-text text-muted">{{ post.excerpt }}</p>
+                        
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-arrow-right me-2"></i>Read More
+                            </a>
+                            <div class="social-share">
+                                <a href="#" class="text-muted me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-muted me-2"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-muted"><i class="fas fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+
+                <!-- Pagination -->
+                <nav aria-label="Blog pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <!-- Search -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-search me-2"></i>Search</h5>
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="Search articles...">
+                                <button class="btn btn-outline-primary" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-tags me-2"></i>Categories</h5>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Digital Strategy
+                                    <span class="badge bg-primary rounded-pill">5</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Technology
+                                    <span class="badge bg-primary rounded-pill">8</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Data Analytics
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Business Insights
+                                    <span class="badge bg-primary rounded-pill">6</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><i class="fas fa-envelope me-2"></i>Newsletter</h5>
+                            <p class="text-muted small">Get the latest insights delivered to your inbox.</p>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Your email address">
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Subscribe
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

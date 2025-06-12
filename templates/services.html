@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-gradient text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-5 fw-bold mb-3">
+                    <i class="fas fa-cogs me-3"></i>Our Services
+                </h1>
+                <p class="lead">Comprehensive digital solutions designed to accelerate your business growth and innovation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="services-section py-5">
+    <div class="container">
+        <div class="row">
+            {% for service in services %}
+            <div class="col-lg-6 mb-4">
+                <div class="service-card h-100 p-4 border rounded">
+                    <div class="service-header d-flex align-items-center mb-3">
+                        <div class="service-icon me-3">
+                            {% if service.icon == 'strategy' %}
+                                <i class="fas fa-chess-king fa-2x text-primary"></i>
+                            {% elif service.icon == 'tech' %}
+                                <i class="fas fa-laptop-code fa-2x text-success"></i>
+                            {% elif service.icon == 'analytics' %}
+                                <i class="fas fa-chart-bar fa-2x text-info"></i>
+                            {% elif service.icon == 'cloud' %}
+                                <i class="fas fa-cloud fa-2x text-warning"></i>
+                            {% endif %}
+                        </div>
+                        <h3 class="service-title mb-0">{{ service.name }}</h3>
+                    </div>
+                    <p class="service-description text-muted mb-4">{{ service.description }}</p>
+                    <a href="#" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-right me-2"></i>Learn More
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Services -->
+<section class="detailed-services-section py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-3">How We Help Your Business Succeed</h2>
+                <p class="lead text-muted">Our comprehensive approach ensures every aspect of your digital transformation is covered.</p>
+            </div>
+        </div>
+
+        <!-- Service Detail Cards -->
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="service-detail-card bg-white p-4 rounded shadow-sm h-100">
+                    <div class="card-icon mb-3">
+                        <i class="fas fa-compass fa-3x text-primary"></i>
+                    </div>
+                    <h4>Strategic Planning</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-check text-success me-2"></i>Digital roadmap development</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Technology assessment</li>
+                        <li><i class="fas fa-check text-success me-2"></i>ROI optimization</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Risk analysis</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="service-detail-card bg-white p-4 rounded shadow-sm h-100">
+                    <div class="card-icon mb-3">
+                        <i class="fas fa-tools fa-3x text-success"></i>
+                    </div>
+                    <h4>Implementation</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-check text-success me-2"></i>Custom software development</li>
+                        <li><i class="fas fa-check text-success me-2"></i>System integration</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Cloud migration</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Quality assurance</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="service-detail-card bg-white p-4 rounded shadow-sm h-100">
+                    <div class="card-icon mb-3">
+                        <i class="fas fa-headset fa-3x text-info"></i>
+                    </div>
+                    <h4>Ongoing Support</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-check text-success me-2"></i>24/7 monitoring</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Performance optimization</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Training & documentation</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Continuous improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies -->
+<section class="technologies-section py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-3">Technologies We Work With</h2>
+                <p class="lead text-muted">We leverage the latest tools and platforms to deliver cutting-edge solutions.</p>
+            </div>
+        </div>
+        
+        <div class="row text-center">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+                <div class="tech-item p-3">
+                    <i class="fab fa-python fa-3x text-primary mb-2"></i>
+                    <p class="small mb-0">Python</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+                <div class="tech-item p-3">
+                    <i class="fab fa-js-square fa-3x text-warning mb-2"></i>
+                    <p class="small mb-0">JavaScript</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+                <div class="tech-item p-3">
+                    <i class="fab fa-react fa-3x text-info mb-2"></i>
+                    <p class="small mb-0">React</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+                <div class="tech-item p-3">
+                    <i class="fab fa-aws fa-3x text-warning mb-2"></i>
+                    <p class="small mb-0">AWS</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+                <div class="tech-item p-3">
+                    <i class="fab fa-docker fa-3x text-primary mb-2"></i>
+                    <p class="small mb-0">Docker</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+                <div class="tech-item p-3">
+                    <i class="fas fa-database fa-3x text-success mb-2"></i>
+                    <p class="small mb-0">Databases</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-3">Our Process</h2>
+                <p class="lead text-muted">A proven methodology that ensures successful project delivery every time.</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-3 text-center">
+                <div class="process-step">
+                    <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <span class="fw-bold">1</span>
+                    </div>
+                    <h5>Discovery</h5>
+                    <p class="text-muted small">Understanding your business needs and objectives</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="process-step">
+                    <div class="step-number bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <span class="fw-bold">2</span>
+                    </div>
+                    <h5>Planning</h5>
+                    <p class="text-muted small">Creating a detailed roadmap and strategy</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="process-step">
+                    <div class="step-number bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <span class="fw-bold">3</span>
+                    </div>
+                    <h5>Execution</h5>
+                    <p class="text-muted small">Implementing solutions with precision and care</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="process-step">
+                    <div class="step-number bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <span class="fw-bold">4</span>
+                    </div>
+                    <h5>Support</h5>
+                    <p class="text-muted small">Ongoing maintenance and optimization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="services-cta-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h3 class="fw-bold mb-3">Ready to Get Started?</h3>
+                <p class="lead text-muted mb-4">
+                    Let's discuss your project and explore how our services can help you achieve your business goals.
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{{ url_for('about') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
+                    </a>
+                    <a href="{{ url_for('blog') }}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-book me-2"></i>Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
