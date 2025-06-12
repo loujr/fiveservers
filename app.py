@@ -2,18 +2,8 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    """Home page route"""
-    return render_template('index.html', 
-                         page_title='fiveservers | Home',
-                         page_type='home')
-
-@app.route('/blog')
-def blog():
-    """Blog page route"""
-    # Comprehensive blog posts covering all specified topics
-    posts = [
+# Comprehensive blog posts covering all specified topics
+posts = [
         # AI and Machine Learning
         {
             'title': 'AI Revolution: Latest Breakthroughs Transforming Business',
@@ -295,6 +285,17 @@ def blog():
             'content': 'Automation implementation guide with no-code tools, workflow examples, and ROI calculation methods.'
         }
     ]
+
+@app.route('/')
+def home():
+    """Home page route"""
+    return render_template('index.html', 
+                         page_title='fiveservers | Home',
+                         page_type='home')
+
+@app.route('/blog')
+def blog():
+    """Blog page route"""
     return render_template('blog.html', 
                          page_title='fiveservers | Blog',
                          page_type='blog',
