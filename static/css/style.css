@@ -104,6 +104,102 @@ body {
     border-radius: 16px;
 }
 
+/* Additional Color Gradients */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+}
+
+.bg-gradient-secondary {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
+}
+
+.bg-gradient-accent {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--quaternary-color) 100%);
+}
+
+.bg-gradient-warm {
+    background: linear-gradient(135deg, var(--tertiary-color) 0%, var(--warning-color) 100%);
+}
+
+.bg-gradient-cool {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+}
+
+.bg-gradient-ocean {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.bg-gradient-sunset {
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+}
+
+.bg-gradient-forest {
+    background: linear-gradient(135deg, #2d5a27 0%, #4ecdc4 100%);
+}
+
+.bg-gradient-nebula {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-aurora {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+/* Animated gradients */
+.bg-gradient-animated {
+    background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--tertiary-color));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hover gradient effects */
+.gradient-hover:hover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    transition: all 0.3s ease;
+}
+
+.gradient-hover-reverse:hover {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    transition: all 0.3s ease;
+}
+
+/* Text gradients */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.text-gradient-warm {
+    background: linear-gradient(135deg, var(--tertiary-color) 0%, var(--warning-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.text-gradient-cool {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
@@ -708,8 +804,44 @@ body {
         padding: 12px 24px;
     }
     
+    /* Fix mobile navbar styling */
+    .navbar-toggler {
+        border: none;
+        padding: 4px 8px;
+        background: var(--glass-bg);
+        border-radius: 8px;
+        border: 1px solid var(--glass-border);
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(100, 255, 218, 0.25);
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28100, 255, 218, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    .navbar-collapse {
+        background: var(--surface-color);
+        border-radius: 12px;
+        border: 1px solid var(--glass-border);
+        margin-top: 1rem;
+        padding: 1rem;
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+    }
+    
     .navbar-nav .nav-link {
         padding: 12px 16px;
+        margin: 4px 0;
+        border-radius: 8px;
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        background: var(--glass-bg);
+        transform: none; /* Remove transform on mobile to prevent layout issues */
     }
     
     .glass-card, .feature-card, .service-card, .process-arrow {

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="serverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#64ffda;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bb86fc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="#121212" stroke="url(#serverGradient)" stroke-width="2"/>
+  
+  <!-- Server icon -->
+  <!-- Main server body -->
+  <rect x="25" y="30" width="50" height="40" rx="4" fill="url(#serverGradient)" opacity="0.9"/>
+  
+  <!-- Server details -->
+  <rect x="30" y="35" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="42" y="35" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="54" y="35" width="8" height="2" fill="#121212" opacity="0.8"/>
+  
+  <rect x="30" y="40" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="42" y="40" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="54" y="40" width="8" height="2" fill="#121212" opacity="0.8"/>
+  
+  <rect x="30" y="45" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="42" y="45" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="54" y="45" width="8" height="2" fill="#121212" opacity="0.8"/>
+  
+  <rect x="30" y="50" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="42" y="50" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="54" y="50" width="8" height="2" fill="#121212" opacity="0.8"/>
+  
+  <rect x="30" y="55" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="42" y="55" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="54" y="55" width="8" height="2" fill="#121212" opacity="0.8"/>
+  
+  <rect x="30" y="60" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="42" y="60" width="8" height="2" fill="#121212" opacity="0.8"/>
+  <rect x="54" y="60" width="8" height="2" fill="#121212" opacity="0.8"/>
+  
+  <!-- Power LED -->
+  <circle cx="67" cy="38" r="2" fill="#64ffda"/>
+</svg>
